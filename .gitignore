@@ -1,0 +1,11 @@
+.*
+!/.gitignore
+
+**/__pycache__
+
+models/
+data/
+check.ipynb
+exper2.ipynb
+experiments.ipynb
+model/qwen/*

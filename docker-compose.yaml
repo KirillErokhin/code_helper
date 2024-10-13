@@ -1,0 +1,11 @@
+services:
+  coder_helper:
+    build: 
+      context: .  # Контекст сборки: текущая директория, где находится Dockerfile
+      dockerfile: Dockerfile  # Имя Dockerfile для сборки образа
+    ports:
+      - 7860:7860  # Проброс порта 7860 для Gradio (внешний:внутренний, часто используется для Gradio)
+    container_name: coder_helper  # Указание имени контейнера, чтобы было проще идентифицировать его
+    runtime: nvidia  # Использование NVIDIA Runtime для поддержки работы с GPU внутри контейнера
+    volumes:
+      - ./model/qwen/:/app/model/qwen/  # Монтирование локальной директории с моделью внутрь контейнера
